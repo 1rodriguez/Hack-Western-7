@@ -43,6 +43,12 @@ class UploadComponent extends Component {
   handleDrop = (e) => {
     e.preventDefault()
     e.stopPropagation()
+
+    this.setState({ dragging: false })
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      this.props.handleDrop(e.dataTransfer.files)
+      this.dragCounter = 0
+    }
   }
 
 
@@ -54,7 +60,7 @@ class UploadComponent extends Component {
     div.addEventListener('dragenter', this.handleDragIn)
     div.addEventListener('dragleave', this.handleDragOut)
     div.addEventListener('dragover', this.handleDrag)
-    div.addeventListener('drop', this.handleDrop)
+    div.addEventListener('drop', this.handleDrop)
   }
 
   componentWillUnmount() {
@@ -66,9 +72,42 @@ class UploadComponent extends Component {
   }
 
   render() {
-    return(<div ref={this.dropRef}>
-      {this.props.children}
-    </div>);
+    return (
+      <div
+        class="outer"
+        ref={this.dropRef}
+      >
+        {this.state.dragging &&
+          <div 
+            style={{
+              border: 'dashed grey 4px',
+              backgroundColor: 'rgba(255,255,255,.8)',
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              left: 0, 
+              right: 0,
+              zIndex: 9999
+            }}
+          >
+            <div 
+              style={{
+                position: 'absolute',
+                top: '50%',
+                right: 0,
+                left: 0,
+                textAlign: 'center',
+                color: 'grey',
+                fontSize: 36
+              }}
+            >
+              <div>drop here :)</div>
+            </div>
+          </div>
+        }
+        {this.props.children}
+      </div>
+    )
   }
 }
 export default UploadComponent;
