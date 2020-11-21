@@ -2,7 +2,7 @@ exports.convert = async (req, res) => {
     try{
         const {file} = req.body;
         var spawn = require("child_process").spawn; 
-        var process = spawn('python',["./api/python/main.py", file] );
+        var process = spawn('python3',["./api/python/main.py", file] );
 
         process.stdout.on('data', (data) => console.log(data.toString()));
 
@@ -19,6 +19,7 @@ exports.convert = async (req, res) => {
 
         return res.status(200).send({
             message: "Success",
+
             // txt: txt
         });
     } catch(e){
