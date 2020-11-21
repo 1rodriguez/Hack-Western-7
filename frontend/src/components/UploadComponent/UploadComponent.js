@@ -11,14 +11,33 @@ class UploadComponent extends Component {
     e.stopPropagation()
   }
 
+  state = {
+    dragging: false
+  }
+
   handleDragIn = (e) => {
     e.preventDefault()
     e.stopPropagation()
+
+    this.dragCounter++
+
+    if (e.dataTransfer.items && e.dataTransfer.items.length > 0) {
+      this.setState({ dragging: true })
+    }
   }
 
   handleDragOut = (e) => {
     e.preventDefault()
     e.stopPropagation()
+
+    this.dragCounter--
+
+    // If child elements present within drag 'n drop
+    // counter will prevent re-rendering on trigger of handleDragOut
+    // within child components
+    if (this.dragCounter > 0) return
+
+    this.setState({ dragging: false })
   }
 
   handleDrop = (e) => {
@@ -28,6 +47,9 @@ class UploadComponent extends Component {
 
 
   componentDidMount() {
+
+    this.dragCounter = 0
+
     let div = this.dropRef.current
     div.addEventListener('dragenter', this.handleDragIn)
     div.addEventListener('dragleave', this.handleDragOut)
