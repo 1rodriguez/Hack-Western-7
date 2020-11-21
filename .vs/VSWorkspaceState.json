@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\backend",
+    "\\backend\\api",
+    "\\backend\\api\\controller",
+    "\\backend\\api\\model",
+    "\\backend\\api\\routes"
+  ],
+  "SelectedNode": "\\backend\\api.js",
+  "PreviewInSolutionExplorer": false
+}
