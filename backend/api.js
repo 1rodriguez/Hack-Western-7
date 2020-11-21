@@ -28,9 +28,7 @@ app.use((req, res, next) => {
     return res.status(200).json({});
   }
   next();
-})
-
-app.use('/', express.static('static/lab4_angular'));
+});
 
 app.use('/api', routes);
 
