@@ -6,7 +6,9 @@ exports.removeUploads = async (req, res, next) => {
         fs.rmdirSync(path.join(__dirname, '../../', 'uploads'), {recursive: true})
         //file removed
         fs.mkdir(path.join(__dirname, '../../', 'uploads'), {}, (e) => {
-            console.log(e)
+            if(e){
+                console.log(e)
+            }
         })
         return next();
       } catch(err) {
