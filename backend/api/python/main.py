@@ -1,6 +1,7 @@
 import speech_recognition as sr
 import moviepy.editor as mp
 import sys 
+from os import listdir
 from pathlib import Path
 
 # get video and convert to audtio
@@ -10,7 +11,8 @@ from pathlib import Path
 # spawned the process, but the main server.js file that's called to start the server
 
 # TODO: These path resolutions might not work for Kwame on windows
-videoName = Path("api/python/sampleVideo.mp4").resolve()
+
+videoName = Path("uploads/" + listdir("uploads/")[0]).resolve()
 clip = mp.VideoFileClip(str(videoName))
 clip.audio.write_audiofile(r"converted.wav")
 r = sr.Recognizer()
@@ -24,6 +26,10 @@ with audio as source:
     audio_file = r.record(source)
 
 result = r.recognize_google(audio_file)
+
+with open('recognized.txt',mode ='w') as file: 
+   file.write(result) 
+   print("ready!")
 
 
 

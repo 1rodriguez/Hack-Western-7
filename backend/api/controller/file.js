@@ -1,27 +1,13 @@
+const fs = require('fs');
+const path = require('path')
+
 exports.convert = async (req, res) => {
     try{
-        const {file} = req.body;
-        var spawn = require("child_process").spawn; 
-        var process = spawn('python3',["./api/python/main.py", file] );
+        var spawnSync = require("child_process").spawnSync; 
+        
+        var process = spawnSync('python3',["./api/python/main.py"] );
 
-        process.stdout.on('data', (data) => console.log(data.toString()));
-
-        process.stderr.on('data', (data) => {
-        console.log(`stderr: ${data}`);
-        });
-
-        // pp.on('close', (code) => {
-        // console.log(`child process exited with code ${code}`);
-        // });
-
-        // console.log(pp)
-        // const txt = pythonProcess.convertToTxt(file);
-
-        return res.status(200).send({
-            message: "Success",
-
-            // txt: txt
-        });
+        return res.status(200).sendFile(path.join(__dirname, '../../', 'recognized.txt'))
     } catch(e){
         console.log(e)
         return res.status(500).send({
@@ -30,4 +16,8 @@ exports.convert = async (req, res) => {
             } 
         });
     }
+}
+
+function sync(){
+
 }
