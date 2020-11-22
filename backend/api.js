@@ -20,7 +20,7 @@ app.use(
 //this is to prevent CORS errors/
 app.use((req, res, next) => {
   //the starts says allow request from any _____
-  res.header('Access-Control-Allow-Origin', '*'); //origin
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); //origin
   res.header('Access-Control-Allow-Headers', 'content-type');//header
   res.setHeader('Access-Control-Allow-Credentials', true);
   if(req.method === 'OPTIONS'){

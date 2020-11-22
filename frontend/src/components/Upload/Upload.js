@@ -5,22 +5,33 @@ import UploadFilesService from '../../services/upload-files.service';
 
 class Upload extends Component {
 
+
     fileService = new UploadFilesService();
 
     constructor(props) {
         super(props)
         this.state = {
             selectedFile: null,
+            input: "",
         }
     }
 
     onChangeHandler = (event) => {
         this.setState( { selectedFile: event.target.files[0],
-        loaded: 0 })
+        loaded: 0,
+    })
     }
 
     onClickHandler = () => {
         this.fileService.upload(this.state.selectedFile)
+    }
+
+    speedUpHandler = (e) => {
+        this.setState({ input: e.target.value })
+    }
+
+    fetchSpeed = () => {
+        this.fileService.speedUp(this.state.selectedFile, parseFloat(this.state.input));
     }
 
     render() {
@@ -43,6 +54,11 @@ class Upload extends Component {
             </form>
             
             <button onClick={this.onClickHandler}>Upload</button>
+
+            <div>
+                <input placeholder="factor" onChange={event => this.speedUpHandler(event)}></input>
+                <button onClick={this.fetchSpeed}>Speed Up</button>
+            </div>
             
         </div>
         </div>
