@@ -44,10 +44,14 @@ class Upload extends Component {
                 
                 
                 
-                <div className="form-group files">
                     <label>Upload Your File </label>
-                    <input type="file" name="file" className="form-control" multiple="" onChange={this.onChangeHandler}>
-                    </input>
+                <div className="form-group files">
+                    <div className = "inputDropBoxDiv">
+                        <div className = "center">
+                            <input type="file" name="file" className="form-control" multiple="" onChange={this.onChangeHandler}>
+                            </input>
+                        </div>
+                    </div>
                 </div>
                 
                 

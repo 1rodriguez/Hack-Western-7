@@ -1,14 +1,28 @@
-.files input {
+.files{
   outline: 2px dashed #92b0b3;
   outline-offset: -10px;
   -webkit-transition: outline-offset 0.15s ease-in-out,
     background-color 0.15s linear;
   transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
-  padding: 120px 0px 85px 35%;
-  text-align: center !important;
-  margin: 0;
   width: 100% !important;
 }
+
+label{
+  margin: 25px 0;
+}
+
+.inputDropBoxDiv input{
+  width: 300px;
+  margin: 120px 0px;
+  position: relative;
+  top: 20px;
+  left: -92px;
+}
+.center{
+  width: 1px !important;
+  margin: 0 auto;
+}
+
 .files input:focus {
   outline: 2px dashed #92b0b3;
   outline-offset: -10px;

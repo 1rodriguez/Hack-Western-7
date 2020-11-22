@@ -5,7 +5,7 @@ import Upload from './components/Upload/Upload';
 function App() {
   return (
     <div>
-      <p>Works!</p>
+      <h1>Transcribe</h1>
       <Upload></Upload>
     </div>
   );

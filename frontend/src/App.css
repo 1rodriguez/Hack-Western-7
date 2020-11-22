@@ -1,3 +1,20 @@
+h1{
+  font-family: 'Raleway',sans-serif; 
+  font-size: 54px; 
+  font-weight: 500; 
+  line-height: 72px; 
+  margin: 25px 0 24px 0; 
+  text-align: center; 
+  text-transform: uppercase; 
+}
+
+
+
+
+
+
+
+
 .App {
   text-align: center;
 }
