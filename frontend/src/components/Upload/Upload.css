@@ -1,0 +1,122 @@
+.files{
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  -webkit-transition: outline-offset 0.15s ease-in-out,
+    background-color 0.15s linear;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+  width: 100% !important;
+}
+
+label{
+  margin: 25px 0;
+}
+
+.inputDropBoxDiv input{
+  width: 300px;
+  margin: 120px 0px;
+  position: relative;
+  top: 20px;
+  left: -92px;
+}
+.center{
+  width: 1px !important;
+  margin: 0 auto;
+}
+
+.files input:focus {
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  -webkit-transition: outline-offset 0.15s ease-in-out,
+    background-color 0.15s linear;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+  border: 1px solid #92b0b3;
+}
+.files {
+  position: relative;
+}
+.files:after {
+  pointer-events: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 50px;
+  right: 0;
+  height: 56px;
+  content: "";
+  background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+  display: block;
+  margin: 0 auto;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.color input {
+  background-color: #f1f1f1;
+}
+.files:before {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  right: 0;
+  height: 57px;
+  content: " or drag it here. ";
+  display: block;
+  margin: 0 auto;
+  color: #2ea591;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  /* margin: 0 0.3em 0.3em 0; */
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #2b3a67;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+button:hover {
+  color: #000000;
+  background-color: #ffc857;
+}
+
+.input-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-area button{
+  width: 100%;
+}
+
+.upload-bt {
+  padding: 10px;
+}
+
+.formInput{
+  height: 40px;
+  margin-top: 5px;
+}
+
+.formInput input{
+  padding: 8px 0px 8px 5px;
+  border-radius: 5px;
+}
+
+.formInput button{
+  padding: 10px;
+}
+
+.centerForm{
+  margin: 0 auto;
+}
