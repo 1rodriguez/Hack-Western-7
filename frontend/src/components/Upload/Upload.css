@@ -73,7 +73,7 @@ button {
   display: inline-block;
   padding: 0.35em 1.2em;
   border: 0.1em solid #ffffff;
-  margin: 0 0.3em 0.3em 0;
+  /* margin: 0 0.3em 0.3em 0; */
   border-radius: 0.12em;
   box-sizing: border-box;
   text-decoration: none;
@@ -92,9 +92,31 @@ button:hover {
 .input-area {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.upload-area button{
+  width: 100%;
 }
 
 .upload-bt {
   padding: 10px;
+}
+
+.formInput{
+  height: 40px;
+  margin-top: 5px;
+}
+
+.formInput input{
+  padding: 8px 0px 8px 5px;
+  border-radius: 5px;
+}
+
+.formInput button{
+  padding: 10px;
+}
+
+.centerForm{
+  margin: 0 auto;
 }
