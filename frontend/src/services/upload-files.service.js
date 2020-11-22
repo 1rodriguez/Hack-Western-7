@@ -18,8 +18,7 @@ class UploadFilesService {
           return res.blob()
         })
       .then(body => {
-          console.log(body)
-          download(body, 'something.txt', 'text/plain')
+          download(body, 'output.txt', 'text/plain')
         })
      
     }
