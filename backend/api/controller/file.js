@@ -18,6 +18,22 @@ exports.convert = async (req, res) => {
     }
 }
 
-function sync(){
+exports.speedUp = async (req, res) => {
+    try{
+        const {speed} = req.body;
 
+        var spawnSync = require("child_process").spawnSync; 
+        
+        var process = spawnSync('python3',["./api/python/vidSpeed.py", speed] );
+    
+
+        return res.status(200).sendFile(path.join(__dirname, '../../', 'edited.mp4'))
+    } catch(e){
+        console.log(e)
+        return res.status(500).send({
+            error: {
+               message: e
+            } 
+        });
+    }
 }
