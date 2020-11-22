@@ -52,12 +52,14 @@ class Upload extends Component {
                 
                 
             </form>
-            
-            <button onClick={this.onClickHandler}>Upload</button>
-
-            <div>
-                <input placeholder="factor" onChange={event => this.speedUpHandler(event)}></input>
-                <button onClick={this.fetchSpeed}>Speed Up</button>
+            <div className="input-area">
+                <div className="upload-area">
+                    <button className="upload-bt" onClick={this.onClickHandler}>Upload</button>
+                </div>
+                <div>
+                    <input placeholder="factor" onChange={event => this.speedUpHandler(event)}></input>
+                    <button onClick={this.fetchSpeed}>Speed Up</button>
+                </div>
             </div>
             
         </div>
