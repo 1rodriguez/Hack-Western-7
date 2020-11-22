@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import UploadComponent from './components/UploadComponent/UploadComponent';
-import FileList from './FileList'
+import Upload from './components/Upload/Upload';
 
 function App() {
   return (
-    <FileList></FileList>
+    <div>
+      <p>Works!</p>
+      <Upload></Upload>
+    </div>
   );
 }
 
